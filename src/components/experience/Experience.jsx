@@ -1,6 +1,6 @@
 import React from 'react'
 import './Experience.css'
-import { AiFillCheckCircle } from "react-icons/ai";
+import { BsFillPatchCheckFill } from "react-icons/bs";
 
 const Experience = () => {
     return (
@@ -12,28 +12,28 @@ const Experience = () => {
                     <h3>Web Development</h3>
                     <div className="experience_content">
                         <article className='experience_details'>
-                            <AiFillCheckCircle className='experience_icon' />
-                            <h4>HTML5</h4>
+                            <BsFillPatchCheckFill className='experience_icon' />
+                            <span>HTML5</span>
                             <small className='text_light'>Experienced</small>
                         </article>
                         <article className='experience_details'>
-                            <AiFillCheckCircle className='experience_icon' />
-                            <h4>CSS3</h4>
+                            <BsFillPatchCheckFill className='experience_icon' />
+                            <span>CSS3</span>
                             <small className='text_light'>Experienced</small>
                         </article>
                         <article className='experience_details'>
-                            <AiFillCheckCircle className='experience_icon' />
-                            <h4>JavaScript</h4>
+                            <BsFillPatchCheckFill className='experience_icon' />
+                            <span>JavaScript</span>
                             <small className='text_light'>Experienced</small>
                         </article>
                         <article className='experience_details'>
-                            <AiFillCheckCircle className='experience_icon' />
-                            <h4>React</h4>
+                            <BsFillPatchCheckFill className='experience_icon' />
+                            <span>React</span>
                             <small className='text_light'>Experienced</small>
                         </article>
                         <article className='experience_details'>
-                            <AiFillCheckCircle className='experience_icon' />
-                            <h4>Bootstrap</h4>
+                            <BsFillPatchCheckFill className='experience_icon' />
+                            <span>Bootstrap</span>
                             <small className='text_light'>Experienced</small>
                         </article>
                     </div>
@@ -42,23 +42,23 @@ const Experience = () => {
                     <h3>GIS Development</h3>
                     <div className="experience_content">
                         <article className='experience_details'>
-                            <AiFillCheckCircle className='experience_icon' />
-                            <h4>GE Smallworld</h4>
+                            <BsFillPatchCheckFill className='experience_icon' />
+                            <span>GE Smallworld</span>
                             <small className='text_light'>intermediate</small>
                         </article>
                         <article className='experience_details'>
-                            <AiFillCheckCircle className='experience_icon' />
-                            <h4>Magik Programming</h4>
+                            <BsFillPatchCheckFill className='experience_icon' />
+                            <span>Magik Programming</span>
                             <small className='text_light'>intermediate</small>
                         </article>
                         <article className='experience_details'>
-                            <AiFillCheckCircle className='experience_icon' />
-                            <h4>ArcGis</h4>
+                            <BsFillPatchCheckFill className='experience_icon' />
+                            <span>ArcGis</span>
                             <small className='text_light'>Experienced</small>
                         </article>
                         <article className='experience_details'>
-                            <AiFillCheckCircle className='experience_icon' />
-                            <h4>QGis</h4>
+                            <BsFillPatchCheckFill className='experience_icon' />
+                            <span>QGis</span>
                             <small className='text_light'>Experienced</small>
                         </article>
                     </div>
@@ -67,58 +67,55 @@ const Experience = () => {
                     <h3>Other Techs</h3>
                     <div className="experience_content">
                         <article className='experience_details'>
-                            <AiFillCheckCircle className='experience_icon' />
-                            <h4>C++</h4>
+                            <BsFillPatchCheckFill className='experience_icon' />
+                            <span>C++</span>
                             <small className='text_light'>Competent</small>
                         </article>
                         <article className='experience_details'>
-                            <AiFillCheckCircle className='experience_icon' />
-                            <h4>MSSQL,MySql</h4>
+                            <BsFillPatchCheckFill className='experience_icon' />
+                            <span>MSSQL,MySql</span>
                             <small className='text_light'>intermediate</small>
                         </article>
                         <article className='experience_details'>
-                            <AiFillCheckCircle className='experience_icon' />
-                            <h4>GIT</h4>
+                            <BsFillPatchCheckFill className='experience_icon' />
+                            <span>GIT</span>
                             <small className='text_light'>intermediate</small>
                         </article>
                         <article className='experience_details'>
-                            <AiFillCheckCircle className='experience_icon' />
-                            <h4>Jira, Kanban, Rmtrack,Azure Board</h4>
+                            <BsFillPatchCheckFill className='experience_icon' />
+                            <span>Jira, Kanban, Rmtrack,Azure Board</span>
                             <small className='text_light'>intermediate</small>
                         </article>
                         <article className='experience_details'>
-                            <AiFillCheckCircle className='experience_icon' />
-                            <h4>Python</h4>
+                            <BsFillPatchCheckFill className='experience_icon' />
+                            <span>Python</span>
                             <small className='text_light'>Experienced</small>
                         </article>
                     </div>
                 </div>
                 <div className="experience_soft">
-                    <h3>Web Development</h3>
+                    <h3>Soft skills</h3>
                     <div className="experience_content">
                         <article className='experience_details'>
-                            <AiFillCheckCircle className='experience_icon' />
-                            <h4>HTML5</h4>
-                            <small className='text_light'>Experienced</small>
+                            <BsFillPatchCheckFill className='experience_icon' />
+                            <span>Problem solving skills</span>
+                            <small className='text_light'>Reading documentation</small>
+                            <small className='text_light'>Google,stackOverflow and Github</small>
                         </article>
                         <article className='experience_details'>
-                            <AiFillCheckCircle className='experience_icon' />
-                            <h4>CSS3</h4>
-                            <small className='text_light'>Experienced</small>
+                            <BsFillPatchCheckFill className='experience_icon' />
+                            <span>Efficient communicator</span>
+                            <small className='text_light'>Dealing customer</small>
+                            <small className='text_light'>Good teamworker</small>
                         </article>
                         <article className='experience_details'>
-                            <AiFillCheckCircle className='experience_icon' />
-                            <h4>JavaScript</h4>
-                            <small className='text_light'>Experienced</small>
+                            <BsFillPatchCheckFill className='experience_icon' />
+                            <span>Great Coding style</span>
+                            <small className='text_light'>Comment, indentation</small>
                         </article>
                         <article className='experience_details'>
-                            <AiFillCheckCircle className='experience_icon' />
-                            <h4>React</h4>
-                            <small className='text_light'>Experienced</small>
-                        </article>
-                        <article className='experience_details'>
-                            <AiFillCheckCircle className='experience_icon' />
-                            <h4>Bootstrap</h4>
+                            <BsFillPatchCheckFill className='experience_icon' />
+                            <span>Presentation skills</span>
                             <small className='text_light'>Experienced</small>
                         </article>
                     </div>
