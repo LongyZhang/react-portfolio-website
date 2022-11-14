@@ -1,6 +1,6 @@
 import React from 'react'
 import './About.css'
-import Me from '../../images/me-about.jpg'
+import Me from '../../images/me.jpg'
 import { BiBookReader, BiBookBookmark } from "react-icons/bi";
 
 const about = () => {
@@ -37,7 +37,10 @@ const about = () => {
 
                         </article>
                     </div>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium quibusdam unde at, officiis inventore sunt adipisci iusto laborum nobis cupiditate delectus velit voluptatem similique necessitatibus odio tempore eius amet nam.</p>
+                    <p>Passionate to reshape my career to web development. Although I have 2 years experience in the
+                        Geospatial software development field, I am willing to restart my career from scratch.</p>
+                    <p>Strong foundation in mathematics and programming logic, complimented by sound technical knowledge
+                        using a range of programming and data analytics tools</p>
                     <a href="#Contact" className='btn btn-primary'> lets talk</a>
                 </div>
             </div>
