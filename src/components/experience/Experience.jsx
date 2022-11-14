@@ -14,27 +14,27 @@ const Experience = () => {
                         <article className='experience_details'>
                             <BsFillPatchCheckFill className='experience_icon' />
                             <span>HTML5</span>
-                            <small className='text_light'>Experienced</small>
+                            <small className='text_light'>intermediate</small>
                         </article>
                         <article className='experience_details'>
                             <BsFillPatchCheckFill className='experience_icon' />
-                            <span>CSS3</span>
-                            <small className='text_light'>Experienced</small>
+                            <span>CSS3 ,Sass ,React Icon ,Bootstrap </span>
+                            <small className='text_light'>intermediate</small>
                         </article>
                         <article className='experience_details'>
                             <BsFillPatchCheckFill className='experience_icon' />
                             <span>JavaScript</span>
-                            <small className='text_light'>Experienced</small>
+                            <small className='text_light'>intermediate</small>
                         </article>
                         <article className='experience_details'>
                             <BsFillPatchCheckFill className='experience_icon' />
-                            <span>React</span>
-                            <small className='text_light'>Experienced</small>
+                            <span>React, Redux, Route, </span>
+                            <small className='text_light'>intermediate</small>
                         </article>
                         <article className='experience_details'>
                             <BsFillPatchCheckFill className='experience_icon' />
-                            <span>Bootstrap</span>
-                            <small className='text_light'>Experienced</small>
+                            <span>.Net Core</span>
+                            <small className='text_light'>intermediate</small>
                         </article>
                     </div>
                 </div>
@@ -89,6 +89,11 @@ const Experience = () => {
                         <article className='experience_details'>
                             <BsFillPatchCheckFill className='experience_icon' />
                             <span>Python</span>
+                            <small className='text_light'>Experienced</small>
+                        </article>
+                        <article className='experience_details'>
+                            <BsFillPatchCheckFill className='experience_icon' />
+                            <span>Data visualization</span>
                             <small className='text_light'>Experienced</small>
                         </article>
                     </div>

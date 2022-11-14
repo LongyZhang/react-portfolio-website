@@ -7,7 +7,7 @@
 
 .experience_container>div {
     background: var(--color-gb-variant);
-    padding: 1rem 2rem;
+    padding: 1rem;
     border-radius: 2rem;
     border: 1px solid transparent;
 }
@@ -21,11 +21,11 @@
 .experience_content {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 2rem;
+    gap: 1rem;
 }
 
 .experience_content .experience_details span {
-    margin-left: 1rem;
+    margin-left: 0.5rem;
     color: var(--color-primary);
 
 }
@@ -41,4 +41,35 @@
 .experience_icon {
     margin-top: 1rem;
     color: var(--color-primary);
+}
+
+@media screen and (max-width:1024px) {
+    .experience_container {
+        grid-template-columns: 1fr;
+
+    }
+
+    .experience_container>div {
+        width: 85%;
+        margin: 0 auto;
+        padding: 2rem;
+    }
+}
+
+@media screen and (max-width:600px) {
+    .experience_container {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .experience_container>div {
+        width: 80%;
+        margin: 0 auto;
+        padding: 2rem;
+    }
+
+    span,
+    small {
+        font-size: 0.6rem;
+    }
 }

@@ -90,6 +90,7 @@
 
 /* media tablet */
 @media screen and (max-width:600px) {
+
     .about_me {
         width: 65%;
         margin: 0 auto 3rem;
@@ -98,10 +99,11 @@
     .about_cards {
         grid-template-columns: 1fr;
         gap: 1rem;
-        margin-bottom: rem;
+        margin-bottom: 2rem;
     }
 
     .about_content {
         text-align: center;
+
     }
 }

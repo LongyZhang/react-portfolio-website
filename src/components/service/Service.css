@@ -1,0 +1,99 @@
+.industry_container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+.industry_wdi {
+    background: var(--color-gb-variant);
+    padding: 1rem;
+    border-radius: 2rem;
+    border: 1px solid transparent;
+}
+
+.industry_air {
+    background: var(--color-gb-variant);
+    padding: 1rem;
+    border-radius: 2rem;
+    border: 1px solid transparent;
+}
+
+.industry_air:hover {
+    background: transparent;
+    transition: var(--transition);
+    border: 1px solid;
+}
+
+.industry_wdi:hover {
+    background: transparent;
+    transition: var(--transition);
+    border: 1px solid;
+}
+
+.logo1 {
+    border-radius: 1rem;
+    border: 1px solid transparent;
+    width: 50%;
+    height: 50%;
+    margin-bottom: 1rem;
+}
+
+.logo1:hover {
+    background: transparent;
+    transition: var(--transition);
+    border: 1px solid;
+}
+
+.logo2 {
+    width: 60%;
+    border-radius: 1rem;
+    border: 1px solid transparent;
+    height: 60%;
+    margin-bottom: 1rem;
+}
+
+.logo2:hover {
+    background: transparent;
+    transition: var(--transition);
+    border: 1px solid;
+}
+
+.exp_content small {
+    color: var(--color-primary);
+}
+
+.exp_detail h5 {
+    font-size: 0.68rem;
+    margin-bottom: 1rem;
+}
+
+.title {
+    display: block;
+    margin-bottom: 1rem;
+}
+
+.exp_content span {
+    color: var(--color-primary);
+}
+
+
+
+@media screen and (max-width:600px) {
+    .industry_container {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+        width: 65%;
+    }
+
+    small {
+        font-size: 0.9rem;
+    }
+
+    span {
+        font-size: 0.7rem;
+    }
+
+    h5 {
+        font-size: 0.6rem;
+    }
+}
