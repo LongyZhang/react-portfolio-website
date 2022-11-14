@@ -29,7 +29,7 @@ header {
     align-items: center;
     gap: 0.8rem;
     left: 0;
-    bottom: 3rem;
+    bottom: 0.5rem;
 
 }
 
@@ -61,7 +61,7 @@ header {
     height: 5rem;
     width: 10rem;
     right: 1rem;
-    bottom: 6rem;
+    bottom: 0.5rem;
     transform: rotate(90deg);
     font-weight: 300;
     font-size: 1rem;
