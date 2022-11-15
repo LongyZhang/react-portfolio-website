@@ -18,11 +18,12 @@
     border: 1px solid;
 }
 
-.experience_content {
+.temp {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 1rem;
 }
+
 
 .experience_content .experience_details span {
     margin-left: 0.5rem;
@@ -54,6 +55,9 @@
         margin: 0 auto;
         padding: 2rem;
     }
+
+
+
 }
 
 @media screen and (max-width:600px) {
