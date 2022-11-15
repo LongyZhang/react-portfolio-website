@@ -14,7 +14,8 @@ const Service = () => {
 
                     <div className="exp_content">
                         <article className='exp_detail'>
-                            <a href="https://we-do-it.com/"> <img src={wdi} alt="" className='logo1' /></a>
+                            <a href="https://we-do-it.com/"> <img src={wdi} alt="" className='logo1' /> <small className="click_web">Website</small></a>
+
                             <small>July 2021 - Present</small>
                             <small className='title'>Title: Software Develoepr</small>
                             <h5>● <span> Develops, maintains, unit tests and deploys</span> multiple Projects on Smallworld by using Magik language(OOP),
@@ -33,7 +34,7 @@ const Service = () => {
 
                     <div className="exp_content">
                         <article className='exp_detail' >
-                            <a href="https://airbornelogic.com.au/"> <img src={air} alt="" className='logo2' /></a>
+                            <a href="https://airbornelogic.com.au/"> <img src={air} alt="" className='logo2' /><small className="click_web">Website</small></a>
                             <small>Nov 2020 - 2021 April</small>
                             <small className='title'>Title: Spatial Data technician</small>
 
