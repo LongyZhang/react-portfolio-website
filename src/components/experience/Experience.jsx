@@ -1,12 +1,20 @@
 import React from 'react'
 import './Experience.css'
 import { BsFillPatchCheckFill } from "react-icons/bs";
+import { Navigation, Pagination, Scrollbar, A11y } from 'swiper';
+import { Swiper, SwiperSlide } from 'swiper/react';
+
+// Import Swiper styles
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+import 'swiper/css/scrollbar';
 
 const Experience = () => {
 
     const data = [
         {
-            type: "web development",
+            type: "Web development",
             content: [
                 {
                     id: 1,
@@ -32,6 +40,24 @@ const Experience = () => {
                     comment: "Intermediate"
 
                 },
+                {
+                    id: 5,
+                    name: "JavaScript ES6",
+                    comment: "Intermediate"
+
+                },
+                {
+                    id: 6,
+                    name: "MVC, Entity Framework",
+                    comment: "Intermediate"
+
+                },
+                {
+                    id: 7,
+                    name: "MSSQL,MySql",
+                    comment: "Intermediate"
+
+                },
 
             ]
         },
@@ -45,20 +71,26 @@ const Experience = () => {
 
                 },
                 {
-                    id: 1,
+                    id: 2,
                     name: "Magik Programming",
                     comment: "Intermediate"
 
                 },
                 {
-                    id: 1,
+                    id: 3,
                     name: "ArcGis",
                     comment: "Intermediate"
 
                 },
                 {
-                    id: 1,
+                    id: 4,
                     name: "QGIS",
+                    comment: "Intermediate"
+
+                },
+                {
+                    id: 5,
+                    name: "GeoPython",
                     comment: "Intermediate"
 
                 },
@@ -100,7 +132,7 @@ const Experience = () => {
                 {
                     id: 6,
                     name: "Data Visualization",
-                    comment: "Intermediate"
+                    comment: "Python, Matlab, Access"
 
                 },
             ]
@@ -115,19 +147,19 @@ const Experience = () => {
 
                 },
                 {
-                    id: 1,
+                    id: 2,
                     name: "Efficient Communicator",
                     comment: "Good Customer skill, Team Player"
 
                 },
                 {
-                    id: 1,
+                    id: 3,
                     name: "Great Coding style",
                     comment: "Comment, Indentation"
 
                 },
                 {
-                    id: 1,
+                    id: 4,
                     name: "Presentation skills",
                     comment: "Good Public Speaker"
 
@@ -140,13 +172,22 @@ const Experience = () => {
         <section id='Experience' >
             <h5>The skills i have</h5>
             <h2>My Experienece</h2>
-            <div className="container experience_container">
+            <Swiper modules={[Navigation, Pagination, Scrollbar, A11y]}
+                spaceBetween={10}
+                slidesPerView={1}
+                pagination={{ clickable: true }}
+                navigation
+                style={{
+
+                    "--swiper-navigation-size": "2rem",
+                }}
+                className="container experience_container " >
                 {data.map((obj) => {
-                    return <div className="experience_web">
+                    return <SwiperSlide className="experience_web " key={obj.type + Date.now()}>
                         <h3>{obj.type}</h3>
                         <div className="temp">
                             {obj.content.map((subObj) => {
-                                return <div className="experience_content">
+                                return <div className="experience_content" key={subObj.id + subObj.name}>
                                     <article className='experience_details'>
                                         <BsFillPatchCheckFill className='experience_icon' />
                                         <span>{subObj.name}</span>
@@ -156,13 +197,10 @@ const Experience = () => {
 
                             })}
                         </div>
-                    </div>
-
-
-
+                    </SwiperSlide>
                 })}
 
-            </div>
+            </Swiper>
         </section>
     )
 }
