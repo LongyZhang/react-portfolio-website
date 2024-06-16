@@ -1,7 +1,7 @@
 import React from 'react'
 import './Portfolio.css'
-import img1 from '../../images/portfolio1.jpg'
-import img2 from '../../images/portfolio2.jpg'
+import img1 from '../../images/portfolio1.png'
+import img2 from '../../images/portfolio2.png'
 import img3 from '../../images/portfolio3.jpg'
 import img4 from '../../images/portfolio4.jpg'
 
@@ -15,30 +15,14 @@ const Portfolio = () => {
             img: img1,
             title: "My Project 1",
             github: "https://github.com/LongyZhang/react-portfolio-website",
-            demo: "https://github.com/LongyZhang/react-portfolio-website"
+            demo: "https://longyzhang.github.io/react-portfolio-website"
         },
         {
             id: 2,
             img: img2,
-            title: "My Project 2",
-            github: "https://github.com/LongyZhang/react-portfolio-website",
-            demo: "https://github.com/LongyZhang/react-portfolio-website"
+            title: "Github Community contribution for Vscode Extension",
+            github: "https://github.com/Systemap/smallworld-magik-vscode/issues/15",
         },
-        {
-            id: 3,
-            img: img3,
-            title: "My Project 3",
-            github: "https://github.com/LongyZhang/react-portfolio-website",
-            demo: "https://github.com/LongyZhang/react-portfolio-website"
-        },
-        {
-            id: 4,
-            img: img4,
-            title: "My Project 4",
-            github: "https://github.com/LongyZhang/react-portfolio-website",
-            demo: "https://github.com/LongyZhang/react-portfolio-website"
-        }
-
     ]
 
     return (

@@ -14,6 +14,60 @@ const Experience = () => {
 
     const data = [
         {
+            type: "Cloud Skills",
+            content: [
+                {
+                    id: 1,
+                    name: "EC2",
+                    comment: "Competent"
+
+                },
+                {
+                    id: 2,
+                    name: "VPC,S3, RDS and Dynamo DB, WAF,IAM, System Manager",
+                    comment: "Competent"
+
+                },
+                {
+                    id: 3,
+                    name: "CloudWatch,Crowdstike and Pingdom",
+                    comment: "Competent"
+
+                },
+                {
+                    id: 4,
+                    name: "Powershell, Python",
+                    comment: "VPC"
+
+                },
+                {
+                    id: 5,
+                    name: "Python Boto3, AWS CLI",
+                    comment: "Competent"
+
+                },
+                {
+                    id: 6,
+                    name: "Windows, Linux",
+                    comment: "Competent"
+
+                },
+                {
+                    id: 7,
+                    name: "Terraform Cloud and Ansible automation",
+                    comment: "Intermediate"
+
+                },
+                {
+                    id: 8,
+                    name: "Script Automation",
+                    comment: "Competent"
+
+                },
+
+            ]
+        },
+        {
             type: "Web development",
             content: [
                 {
@@ -78,19 +132,13 @@ const Experience = () => {
                 },
                 {
                     id: 3,
-                    name: "ArcGis",
+                    name: "ArcGis Enterprise",
                     comment: "Intermediate"
 
                 },
                 {
                     id: 4,
                     name: "QGIS",
-                    comment: "Intermediate"
-
-                },
-                {
-                    id: 5,
-                    name: "GeoPython",
                     comment: "Intermediate"
 
                 },

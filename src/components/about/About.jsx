@@ -21,7 +21,7 @@ const about = () => {
                         <article className='about_card'>
                             <BiBookReader className='about_icon' />
                             <h5>Experience</h5>
-                            <small>2+ years experience</small>
+                            <small>3+ years experience</small>
 
                         </article>
                         <article className='about_card'>
@@ -37,8 +37,7 @@ const about = () => {
 
                         </article>
                     </div>
-                    <p>Passionate to reshape my career to web development. Although I have 2 years experience in the
-                        Geospatial software development field, I am willing to restart my career from scratch.</p>
+                    <p>Passionate to step my career into DevOps rather Ops</p>
                     <p>Strong foundation in mathematics and programming logic, complimented by sound technical knowledge
                         using a range of programming and data analytics tools</p>
                     <a href="#Contact" className='btn btn-primary'> lets talk</a>
