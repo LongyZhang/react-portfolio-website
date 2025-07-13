@@ -24,24 +24,27 @@ The project uses the following technologies:
 
 ## 📁 Project Structure
 
+```
 react-portfolio-website/
 ├── public/
-│ └── index.html
+│   └── index.html
 ├── src/
-│ ├── components/
-│ │ ├── About.jsx
-│ │ ├── Navbar.jsx
-│ │ ├── Projects.jsx
-│ │ ├── Skills.jsx
-│ │ ├── Testimonials.jsx
-│ │ └── Contact.jsx
-│ ├── App.jsx
-│ ├── data.js
-│ ├── index.css
-│ └── index.js
+│   ├── components/
+│   │   ├── About.jsx
+│   │   ├── Contact.jsx
+│   │   ├── Navbar.jsx
+│   │   ├── Projects.jsx
+│   │   ├── Skills.jsx
+│   │   └── Testimonials.jsx
+│   ├── App.jsx
+│   ├── data.js
+│   ├── index.css
+│   └── index.js
 ├── .gitignore
 ├── package.json
 └── README.md
+```
+
 
 ✨ Highlighted Features
 Responsive Design: Works seamlessly on desktop, tablet, and mobile
