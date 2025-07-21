@@ -2,8 +2,8 @@ import React from 'react'
 import './Portfolio.css'
 import img1 from '../../images/portfolio1.png'
 import img2 from '../../images/portfolio2.png'
-import img3 from '../../images/portfolio3.jpg'
-import img4 from '../../images/portfolio4.jpg'
+import img3 from '../../images/portfolio3.png'
+import img4 from '../../images/portfolio4.png'
 
 
 const Portfolio = () => {
@@ -13,7 +13,7 @@ const Portfolio = () => {
         {
             id: 1,
             img: img1,
-            title: "My Project 1",
+            title: "My Personal Portfolio",
             github: "https://github.com/LongyZhang/react-portfolio-website",
             demo: "https://longyzhang.github.io/react-portfolio-website"
         },
@@ -23,6 +23,19 @@ const Portfolio = () => {
             title: "Github Community contribution for Vscode Extension",
             github: "https://github.com/Systemap/smallworld-magik-vscode/issues/15",
         },
+        {
+            id: 3,
+            img: img3,
+            title: "LaTeX Resume Template",
+            github: "https://github.com/LongyZhang/Latex-Overleaf-Resume-Template",
+        },
+        {
+            id: 4,
+            img: img4,
+            title: "AWS Lambda Func and Step Function",
+            github: "https://github.com/LongyZhang/Lambda-function",
+        },
+
     ]
 
     return (
