@@ -20,20 +20,23 @@ const Portfolio = () => {
         {
             id: 2,
             img: img2,
-            title: "Github Community contribution for Vscode Extension",
-            github: "https://github.com/Systemap/smallworld-magik-vscode/issues/15",
+            title: "Terraform & Ansible EC2 Deployment",
+            github: "https://github.com/LongyZhang/Ansible_Terraform_Integration",
+            demo: "https://longyzhang.github.io/Ansible_Terraform_Integration/"
         },
         {
             id: 3,
             img: img3,
             title: "LaTeX Resume Template",
             github: "https://github.com/LongyZhang/Latex-Overleaf-Resume-Template",
+            demo:"https://github.com/LongyZhang/Latex-Overleaf-Resume-Template"
         },
         {
             id: 4,
             img: img4,
             title: "AWS Lambda Func and Step Function",
             github: "https://github.com/LongyZhang/Lambda-function",
+            demo: "https://github.com/LongyZhang/Lambda-function"
         },
 
     ]
@@ -47,7 +50,7 @@ const Portfolio = () => {
                     data.map((obj) => {
                         return <div key={obj.id} className='portfolio_item'>
                             <div className="portfolio_item_img">
-                                <img src={obj.img} alt={obj.title} />
+                                <img  className="portfolio-image" src={obj.img} alt={obj.title} />
                             </div>
                             <h3>{obj.title}</h3>
                             <div className="portfolio_item_cta">
