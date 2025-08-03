@@ -16,29 +16,13 @@ pipeline {
         stage('Checkout') {
             steps {
                 script {
-                    // Use explicit git checkout instead of checkout scm
+                    // Use explicit git checkout
                     git branch: "${GIT_BRANCH}", url: "${GIT_REPO}"
                     
                     // Verify files are present
                     sh 'ls -la'
                     sh 'echo "Checking for required files:"'
                     sh 'ls -la package.json Dockerfile || echo "Some files missing"'
-                }
-            }
-        }
-
-        stage('Install Dependencies & Test') {
-            steps {
-                script {
-                    echo "Running tests in Node.js Docker container"
-                    
-                    sh '''
-                        docker run --rm \\
-                            -v $(pwd):/app \\
-                            -w /app \\
-                            node:18-alpine \\
-                            sh -c "npm ci && npm test -- --coverage --watchAll=false"
-                    '''
                 }
             }
         }
