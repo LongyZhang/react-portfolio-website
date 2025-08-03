@@ -6,7 +6,7 @@ pipeline {
         DOCKER_TAG = "${BUILD_NUMBER}"
         DOCKER_REGISTRY = 'docker.io'
         DOCKER_REPO = 'clouduser1231/react-cicd'
-        DOCKER_SERVER = '10.0.5.88'
+        DOCKER_SERVER = '10.0.5.92'
         DOCKER_SERVER_USER = 'ec2-user'
         GIT_REPO = 'http://10.0.5.213:8929/root/react.git'
         GIT_BRANCH = 'main'
