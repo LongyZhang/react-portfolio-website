@@ -28,20 +28,20 @@ pipeline {
         }
 
         stage('Install Dependencies & Test') {
-    steps {
-        script {
-            echo "Installing dependencies and running tests"
-            
-            sh '''
-                # Install dependencies
-                npm ci
-                
-                # Run tests with coverage
-                npm test -- --coverage --watchAll=false
-            '''
+            steps {
+                script {
+                    echo "Running tests in Node.js Docker container"
+                    
+                    sh '''
+                        docker run --rm \\
+                            -v $(pwd):/app \\
+                            -w /app \\
+                            node:18-alpine \\
+                            sh -c "npm ci && npm test -- --coverage --watchAll=false"
+                    '''
+                }
+            }
         }
-    }
-}
         
         stage('Build Docker Image') {
             steps {
