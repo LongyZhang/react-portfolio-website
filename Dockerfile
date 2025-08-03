@@ -22,7 +22,7 @@ RUN npm run build
 
 
 ## use nginx to serve the react app
-FROM Nginx:alpine
+FROM nginx:alpine
 
 
 COPY --from=build /app/build /usr/share/nginx/html
