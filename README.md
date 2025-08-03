@@ -58,3 +58,6 @@ Skills Section: Technology icons with descriptive text
 Contact Form: Easily integrates using EmailJS or similar services
 
 Easy Customisation: Update data.js to add new projects, social links, or skills
+
+
+http://10.0.5.248:8080/project/react
