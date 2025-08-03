@@ -3,49 +3,64 @@ pipeline {
 
     environment {
         DOCKER_IMAGE = 'react-portfolio-website'
-        DOCKER_TAG= "${BUILD_NUMBER}"
-        DOCKER_REGISTRY = 'docker.io/clouduser1231/react-cicd' 
+        DOCKER_TAG = "${BUILD_NUMBER}"
+        DOCKER_REGISTRY = 'docker.io'
+        DOCKER_REPO = 'clouduser1231/react-cicd'
         DOCKER_SERVER = '10.0.5.88'
         DOCKER_SERVER_USER = 'ec2-user'
+        GIT_REPO = 'http://10.0.5.213:8929/root/react.git'
+        GIT_BRANCH = 'main'
     }
 
     stages {
         stage('Checkout') {
             steps {
                 script {
-                    checkout scm
+                    // Use explicit git checkout instead of checkout scm
+                    git branch: "${GIT_BRANCH}", url: "${GIT_REPO}"
+                    
+                    // Verify files are present
+                    sh 'ls -la'
+                    sh 'echo "Checking for required files:"'
+                    sh 'ls -la package.json Dockerfile || echo "Some files missing"'
                 }
             }
         }
+
         stage('Install Dependencies & Test') {
     steps {
         script {
             echo "Installing dependencies and running tests"
             
-            // Install Node.js if not available on Jenkins
             sh '''
-                # Check if node is available
-                node --version || echo "Node.js not found"
-                npm --version || echo "npm not found"
-                
                 # Install dependencies
                 npm ci
                 
-                # Run tests
+                # Run tests with coverage
                 npm test -- --coverage --watchAll=false
             '''
         }
     }
-}   
-        stage('Build docker image') {
+}
+        
+        stage('Build Docker Image') {
             steps {
                 script {
-                    docker.build("${DOCKER_IMAGE}:${DOCKER_TAG}")
-                    docker.build("${DOCKER_IMAGE}:latest")
+                    echo "Building Docker image: ${DOCKER_IMAGE}:${DOCKER_TAG}"
+                    
+                    // Build Docker images using shell commands
+                    sh "docker build -t ${DOCKER_IMAGE}:${DOCKER_TAG} ."
+                    sh "docker tag ${DOCKER_IMAGE}:${DOCKER_TAG} ${DOCKER_IMAGE}:latest"
+                    
+                    // Tag for registry
+                    sh "docker tag ${DOCKER_IMAGE}:${DOCKER_TAG} ${DOCKER_REPO}:${DOCKER_TAG}"
+                    sh "docker tag ${DOCKER_IMAGE}:latest ${DOCKER_REPO}:latest"
+                    
+                    // Verify images were created
+                    sh "docker images | grep ${DOCKER_IMAGE}"
                 }
             }
         }
-
 
         stage('Push to Docker Registry') {
             when {
@@ -53,40 +68,57 @@ pipeline {
             }
             steps {
                 script {
-                        docker.withRegistry('docker.io/clouduser1231/react-cicd', 'docker-registry-credentials') {
-                        docker.image("${DOCKER_IMAGE}:${DOCKER_TAG}").push()
-                        docker.image("${DOCKER_IMAGE}:latest").push()
+                    echo "Pushing images to Docker registry"
+                    
+                    // Login to Docker registry using credentials
+                    withCredentials([usernamePassword(credentialsId: 'docker-registry-credentials', 
+                                                    usernameVariable: 'DOCKER_USERNAME', 
+                                                    passwordVariable: 'DOCKER_PASSWORD')]) {
+                        sh 'echo $DOCKER_PASSWORD | docker login $DOCKER_REGISTRY -u $DOCKER_USERNAME --password-stdin'
+                    }
+                    
+                    // Push images
+                    sh "docker push ${DOCKER_REPO}:${DOCKER_TAG}"
+                    sh "docker push ${DOCKER_REPO}:latest"
+                    
+                    echo "Images pushed successfully"
                 }
             }
         }
-    }
-    
-            stage('Deploy to Docker Server') {
+        
+        stage('Deploy to Docker Server') {
             when {
                 branch 'main'
             }
             steps {
                 script {
+                    echo "Deploying to Docker server: ${DOCKER_SERVER}"
+                    
                     // SSH to Docker server and deploy
                     sshagent(['docker-server-ssh-key']) {
                         sh """
                             ssh -o StrictHostKeyChecking=no ${DOCKER_SERVER_USER}@${DOCKER_SERVER} '
-                                # Pull latest image
-                                docker pull ${DOCKER_REGISTRY}/${DOCKER_IMAGE}:${DOCKER_TAG}
+                                echo "Pulling latest image from registry..."
+                                docker pull ${DOCKER_REPO}:${DOCKER_TAG}
                                 
-                                # Stop and remove existing container
+                                echo "Stopping existing container..."
                                 docker stop react-portfolio || true
                                 docker rm react-portfolio || true
                                 
-                                # Run new container
+                                echo "Starting new container..."
                                 docker run -d \\
                                     --name react-portfolio \\
                                     -p 80:80 \\
                                     --restart unless-stopped \\
-                                    ${DOCKER_REGISTRY}/${DOCKER_IMAGE}:${DOCKER_TAG}
-                                    
-                                # Clean up old images
+                                    ${DOCKER_REPO}:${DOCKER_TAG}
+                                
+                                echo "Verifying deployment..."
+                                docker ps | grep react-portfolio
+                                
+                                echo "Cleaning up old images..."
                                 docker image prune -f
+                                
+                                echo "Deployment completed successfully!"
                             '
                         """
                     }
@@ -95,16 +127,27 @@ pipeline {
         }
     }
 
-     post {
+    post {
         always {
-            // Clean up local images
-            sh 'docker image prune -f'
+            script {
+                // Clean up local images
+                sh 'docker image prune -f'
+                
+                // Logout from Docker registry
+                sh 'docker logout $DOCKER_REGISTRY || true'
+            }
         }
         success {
             echo 'Deployment successful!'
+            echo "React app should be available at: http://${DOCKER_SERVER}"
         }
         failure {
             echo 'Deployment failed!'
+            script {
+                // Show Docker logs for debugging
+                sh 'docker ps -a | grep react-portfolio || echo "No containers found"'
+                sh 'docker logs react-portfolio || echo "No logs available"'
+            }
         }
     }
 }
