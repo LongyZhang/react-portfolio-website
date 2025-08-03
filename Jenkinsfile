@@ -17,6 +17,26 @@ pipeline {
                 }
             }
         }
+        stage('Install Dependencies & Test') {
+    steps {
+        script {
+            echo "Installing dependencies and running tests"
+            
+            // Install Node.js if not available on Jenkins
+            sh '''
+                # Check if node is available
+                node --version || echo "Node.js not found"
+                npm --version || echo "npm not found"
+                
+                # Install dependencies
+                npm ci
+                
+                # Run tests
+                npm test -- --coverage --watchAll=false
+            '''
+        }
+    }
+}   
         stage('Build docker image') {
             steps {
                 script {
@@ -26,15 +46,6 @@ pipeline {
             }
         }
 
-        stage('Test') {
-            steps {
-                script {
-                    sh """
-                        docker run --rm ${DOCKER_IMAGE}:${DOCKER_TAG} npm test -- --coverage --watchAll=false
-                    """
-                }
-            }
-        }
 
         stage('Push to Docker Registry') {
             when {
