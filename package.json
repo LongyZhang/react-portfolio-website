@@ -47,8 +47,5 @@
       "!src/reportWebVitals.js"
     ],
     "coverageReporters": ["text", "lcov", "html"]
-  },
-  "devDependencies": {
-    "gh-pages": "^4.0.0"
   }
 }
