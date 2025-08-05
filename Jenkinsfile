@@ -6,9 +6,9 @@ pipeline {
         DOCKER_TAG = "${BUILD_NUMBER}"
         DOCKER_REGISTRY = 'docker.io'
         DOCKER_REPO = 'clouduser1231/react-cicd'
-        DOCKER_SERVER = '10.0.5.92'
+        DOCKER_SERVER = '10.0.5.134'
         DOCKER_SERVER_USER = 'ec2-user'
-        GIT_REPO = 'http://10.0.5.213:8929/root/react.git'
+        GIT_REPO = 'http://10.0.5.50:8929/root/react.git'
         GIT_BRANCH = 'main'
     }
 
@@ -47,9 +47,7 @@ pipeline {
         }
 
         stage('Push to Docker Registry') {
-            when {
-                branch 'main'
-            }
+
             steps {
                 script {
                     echo "Pushing images to Docker registry"
@@ -79,6 +77,7 @@ pipeline {
                     echo "Deploying to Docker server: ${DOCKER_SERVER}"
                     
                     // SSH to Docker server and deploy
+                    // I need to copy id_rsa from my local machine to jenkins credentials
                     sshagent(['docker-server-ssh-key']) {
                         sh """
                             ssh -o StrictHostKeyChecking=no ${DOCKER_SERVER_USER}@${DOCKER_SERVER} '
