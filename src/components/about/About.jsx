@@ -37,9 +37,8 @@ const about = () => {
 
                         </article>
                     </div>
-                    <p>Passionate to step my career into DevOps rather Ops</p>
-                    <p>Strong foundation in mathematics and programming logic, complimented by sound technical knowledge
-                        using a range of programming and data analytics tools</p>
+                    <p>AWS-certified Cloud System Administrator with a Bachelor’s in Computer Science and 2+ years of experience managing enterprise-scale infrastructure across multi-region deployments serving 10,000+ users</p>
+                    <p>Designed and operated personal cloud environments with Terraform and Ansible, using EC2-base and Docker-deployed GitLab and Jenkins CI/CD to simulate real-world DevOps pipelines</p>
                     <a href="#Contact" className='btn btn-primary'> lets talk</a>
                 </div>
             </div>
