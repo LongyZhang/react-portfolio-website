@@ -33,6 +33,7 @@ pipeline {
                     echo "Building Docker image: ${DOCKER_IMAGE}:${DOCKER_TAG}"
                     
                     // Build Docker images using shell commands
+                    // here we call docker build with the current directory ..
                     sh "docker build -t ${DOCKER_IMAGE}:${DOCKER_TAG} ."
                     sh "docker tag ${DOCKER_IMAGE}:${DOCKER_TAG} ${DOCKER_IMAGE}:latest"
                     
